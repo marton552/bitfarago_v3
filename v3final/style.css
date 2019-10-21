@@ -5,8 +5,22 @@ canvas {
     display: block;
 }
 
+#data {
+    display: none;
+}
+
 .center {
     text-align: center;
+}
+
+#pp {
+    text-align: center;
+}
+
+#pontossag {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 #lm {
@@ -46,4 +60,75 @@ canvas {
     border: 1px solid black;
     background-color: aqua;
     margin: 2vw;
+}
+
+#allapot {
+    position: absolute;
+    left: 0px;
+    top: 25vh;
+    height: auto;
+    width: 20vw;
+    background-color: gold;
+    font-size: 4vw;
+    border: 2px solid black;
+    border-radius: 1vw;
+    text-align: center;
+}
+
+#vers1 {
+    background-color: rgb(104, 238, 104);
+    font-size: 1.7vw;
+}
+
+#vers2 {
+    background-color: rgb(54, 179, 54);
+    font-size: 1.7vw;
+}
+
+#vr {
+    font-size: 3vw;
+}
+
+#sugo {
+    position: absolute;
+    right: 0px;
+    top: 25vh;
+    height: auto;
+    width: 20vw;
+    background-color: rgb(255, 0, 200);
+    font-size: 4vw;
+    border: 2px solid black;
+    border-radius: 1vw;
+    text-align: center;
+    padding-bottom: 1vh;
+}
+
+#irany {
+    background-color: rgb(59, 160, 228);
+    font-size: 2.2vw;
+}
+
+#irany:hover {
+    cursor: pointer;
+}
+
+#v3p {
+    background-color: rgb(24, 125, 192);
+    font-size: 1.7vw;
+}
+
+#v3p:hover {
+    cursor: pointer;
+}
+
+#ir2 {
+    background-color: rgb(107, 196, 255);
+    font-size: 1.8vw;
+    display: none;
+}
+
+#v3p2 {
+    background-color: rgb(107, 196, 255);
+    font-size: 1.8vw;
+    display: none;
 }

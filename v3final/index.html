@@ -8,17 +8,31 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="test();" onkeydown="key();">
+<body onload="test(); setPont(); checkVersion();" onkeydown="key();">
     <div class="center">
         <span onclick="ver1()" id="ver1">Verzió: 1</span>
         <span onclick="ver2();" id="ver2">Verzió: 2</span>
         <span onclick="ver3();" id="ver3">Verzió: 3</span><br></div>
     <textarea rows="10" cols="80" id="data">Something</textarea>
     <br>
-    <canvas></canvas>
+    <input onchange="setPont();" id="pontossag" type="range" name="points" min="1" max="10"><br>
+    <div id="pp">Pontosság: 5</div>
+    <canvas onclick="ckl();"></canvas>
     <img onclick="lever();" id="lever" src="https://gamepedia.cursecdn.com/minecraft_gamepedia/thumb/1/10/Lever_down.png/150px-Lever_down.png?version=fa6dbcd6f4ad5f501e9a51f5a00132c6">
     <br>
     <div id="lm">Látómező: Kikapcsolva</div>
+    <div id="allapot">Állapot:
+        <div id="vers1">Használatban lévő verzió:</div>
+        <div id="vr">Nincs kiválasztva</div>
+        <div id="vers2">Betöltés: </div>
+        <div id="loading">Kész</div>
+    </div>
+    <div id="sugo">Súgó
+        <div onclick="irany();" id="irany">Irányítás ▼</div>
+        <div id="ir2">Irányítás a nyíl gombokkal (Márton majd megoldja hogy beállítható legyen)</div>
+        <div onclick="v3p();" id="v3p">Verzió 3 pontosság ▼</div>
+        <div id="v3p2">A tippelés pontossága állítható<br>A 10-es a legpontatlanabb (10pixelenként keres)<br>Az 1-es pedig a legpontosabb, de a maximális ajánlott pontosság a 3</div>
+    </div>
 </body>
 
 </html>
