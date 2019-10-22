@@ -62,7 +62,7 @@ function ckl() {
 }
 
 function kk() {
-    document.getElementById("bk").style.overflow = "scroll";
+    document.getElementById("bk").style.overflow = "auto";
 }
 
 function key() {
