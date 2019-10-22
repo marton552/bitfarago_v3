@@ -28,7 +28,7 @@ canvas {
     position: relative;
     width: 10vw;
     transform: scaleY(-1);
-    top: 20px;
+    top: 6.2vh;
 }
 
 #bk {
@@ -64,7 +64,7 @@ canvas {
 }
 
 #vr {
-    font-size: 1.2vw;
+    font-size: 1.8vw;
 }
 
 #sugo {
@@ -95,7 +95,7 @@ canvas {
 
 #v3p {
     background-color: rgb(24, 125, 192);
-    font-size: 1.2vw;
+    font-size: 1.5vw;
 }
 
 #v3p:hover {
@@ -110,7 +110,7 @@ canvas {
 
 #v3p2 {
     background-color: rgb(107, 196, 255);
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     display: none;
 }
 
@@ -158,4 +158,47 @@ canvas {
     margin-left: 37.5%;
     margin-right: 62.5%;
     display: block;
+}
+
+#kep {
+    display: none;
+}
+
+#mobil {
+    background-color: rgb(29, 143, 29);
+    border: 1px solid black;
+    margin-bottom: 1vh;
+}
+
+.ir {
+    color: black;
+    background-color: burlywood;
+    border: 2px solid black;
+    margin-bottom: 1vh;
+}
+
+.ir:hover {
+    background-color: rgb(241, 178, 94);
+}
+
+#minecart {
+    position: absolute;
+    left: 0vw;
+    top: 25vh;
+    width: 27px;
+}
+
+#boat {
+    position: absolute;
+    left: 80vw;
+    top: 25vh;
+    width: 27px;
+}
+
+#asd {
+    font-family: monospace;
+    text-align: center;
+    color: white;
+    margin-top: 1.2vh;
+    margin-bottom: 0.5vh;
 }

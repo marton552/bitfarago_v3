@@ -6,35 +6,111 @@ var sensorsAngle = [];
 var sensorsAngle2 = [];
 var canvas;
 var c;
-var xplayer = 1;
-var yplayer = 1;
+var xplayer = 10;
+var yplayer = 10;
 var volt1 = 0;
 var verzio = 0;
 var o = 5;
+var ketszer = true;
+var mobile1 = false;
+var melyik = 0;
+var fel = "ArrowUp";
+var bal = "ArrowLeft";
+var jobb = "ArrowRight";
+var le = "ArrowDown";
+
+function mobil() {
+    if (mobile1) {
+        document.getElementById("mobil").style.backgroundColor = "rgb(29, 143, 29)";
+        document.getElementById("mobil").innerHTML = "Mobilos/kattintós mód bekapcsolása";
+        mobile1 = false;
+    } else {
+        document.getElementById("mobil").style.backgroundColor = "rgb(255, 74, 74)";
+        document.getElementById("mobil").innerHTML = "Mobilos/kattintós mód kikapcsolása";
+        mobile1 = true;
+    }
+}
+
+
+
+function fel1() {
+    melyik = 1;
+    document.getElementById("fel").style.backgroundColor = "red";
+}
+
+function bal1() {
+    melyik = 2;
+    document.getElementById("bal").style.backgroundColor = "red";
+}
+
+function jobb1() {
+    melyik = 3;
+    document.getElementById("jobb").style.backgroundColor = "red";
+}
+
+function le1() {
+    melyik = 4;
+    document.getElementById("le").style.backgroundColor = "red";
+}
 
 function ckl() {
-    var x1 = event.clientX - canvas.offsetLeft;
-    var y1 = event.clientY - canvas.offsetTop;
-    var p = c.getImageData(x1, y1, 1, 1).data;
-    alert(x1 + " " + y1 + " " + p);
+    if (mobile1) {
+        xplayer = event.clientX - canvas.offsetLeft;
+        yplayer = event.clientY - canvas.offsetTop;
+        ver2();
+    }
+}
+
+function kk() {
+    document.getElementById("bk").style.overflow = "scroll";
 }
 
 function key() {
-    //var p = c.getImageData(1, 1, 1, 1).data;
-    e = event.key;
-    if (e === "ArrowUp" && yplayer > 0) {
-        yplayer -= 5;
+    document.getElementById("bk").style.overflow = "hidden";
+    if (melyik === 0) {
+        console.log(event.key);
+        //var p = c.getImageData(1, 1, 1, 1).data;
+        e = event.key;
+        if (e === fel && yplayer > 0) {
+            yplayer -= 5;
+        }
+        if (e === le && yplayer < 500) {
+            yplayer += 5;
+        }
+        if (e === bal && xplayer > 0) {
+            xplayer -= 5;
+        }
+        if (e === jobb && xplayer < 500) {
+            xplayer += 5;
+        }
+        ver2();
     }
-    if (e === "ArrowDown" && yplayer < 500) {
-        yplayer += 5;
+
+    //beállítás
+    if (melyik === 1) {
+        fel = event.key;
+        document.getElementById("fel").style.backgroundColor = "burlywood";
+        document.getElementById("fel").innerHTML = "Fel: " + fel;
+        melyik = 0;
     }
-    if (e === "ArrowLeft" && xplayer > 0) {
-        xplayer -= 5;
+    if (melyik === 2) {
+        bal = event.key;
+        document.getElementById("bal").style.backgroundColor = "burlywood";
+        document.getElementById("bal").innerHTML = "Bal: " + bal;
+        melyik = 0;
     }
-    if (e === "ArrowRight" && xplayer < 500) {
-        xplayer += 5;
+    if (melyik === 3) {
+        jobb = event.key;
+        document.getElementById("jobb").style.backgroundColor = "burlywood";
+        document.getElementById("jobb").innerHTML = "Jobb: " + jobb;
+        melyik = 0;
     }
-    draw2();
+    if (melyik === 4) {
+        le = event.key;
+        document.getElementById("le").style.backgroundColor = "burlywood";
+        document.getElementById("le").innerHTML = "Le: " + le;
+        melyik = 0;
+    }
 }
 
 function playerdraw() {
@@ -47,19 +123,18 @@ function playerdraw() {
 }
 
 function lever(a) {
-    c.clearRect(0, 0, canvas.width, canvas.height);
-    if (a === 2) {
 
-    } else if (document.getElementById("lever").style.transform === "scaleY(1)") {
+    if (document.getElementById("lever").style.transform === "scaleY(1)") {
         document.getElementById("lever").style.transform = "scaleY(-1)";
-        document.getElementById("lever").style.top = "0vh";
+        document.getElementById("lever").style.top = "6.2vh";
         document.getElementById("lm").innerHTML = "Látómező: Kikapcsolva";
         draw(false);
         if (verzio === 2) draw2();
+
     } else {
         document.getElementById("lever").style.transform = "scaleY(1)";
         draw(true);
-        document.getElementById("lever").style.top = "2vh";
+        document.getElementById("lever").style.top = "0vh";
         document.getElementById("lm").innerHTML = "Látómező: Bekapcsolva";
         if (verzio === 2) draw2();
     }
@@ -98,6 +173,7 @@ function ver1() {
 }
 
 function draw(y) {
+    if (verzio === 1) c.clearRect(0, 0, canvas.width, canvas.height);
     for (var i = 0; i < 4; i++) {
         c.beginPath();
         c.arc(sensorsX[i], sensorsY[i], 15, 0, Math.PI * 3, false);
@@ -128,10 +204,8 @@ function ver2() {
                     sensorsAngle2[i] = tomb[i].split(",")[2].split(":")[1];
                     sensorsAngle2[i] = sensorsAngle2[i].replace("}", "");
                 }
-
-
                 document.getElementById("data").innerHTML = this.responseText + sensorsAngle2[3];
-                //draw2();
+                draw2();
             }
         }
     };
@@ -146,40 +220,34 @@ function ver2() {
 }
 
 function draw2() {
-    ver2();
     c.clearRect(0, 0, canvas.width, canvas.height);
     c.beginPath();
     c.arc(xplayer, yplayer, 5, 0, Math.PI * 3, false);
     c.fillStyle = "black";
     c.fill();
     c.stroke();
-    var mehet = 0;
     for (var i = 0; i < 4; i++) {
-        if ((sensorsAngle[i] * 1 !== 0)) mehet++;
-    }
-    if (mehet >= 2) {
-        for (var i = 0; i < 4; i++) {
-            c.beginPath();
-            c.arc(sensorsX[i], sensorsY[i], 15, 0, Math.PI * 3, false);
-            if ((sensorsAngle2[i] * 1) !== 0) {
-                c.fillStyle = 'rgba(255, 0, 0, 0.5)';
-                c.moveTo(sensorsX[i], sensorsY[i]);
-                c.arc(sensorsX[i], sensorsY[i], 400, ((sensorsAngle[i] * 1) + (sensorsAngle2[i] * 1) - 2) * Math.PI / 180, ((sensorsAngle[i] * 1) + (sensorsAngle2[i] * 1) + 2) * Math.PI / 180);
-                c.lineTo(sensorsX[i], sensorsY[i]);
-                c.fill();
+        c.beginPath();
+        c.arc(sensorsX[i], sensorsY[i], 15, 0, Math.PI * 3, false);
+        if ((sensorsAngle2[i] * 1) !== 0) {
+            c.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            c.moveTo(sensorsX[i], sensorsY[i]);
+            c.arc(sensorsX[i], sensorsY[i], 400, ((sensorsAngle[i] * 1) + (sensorsAngle2[i] * 1) - 2) * Math.PI / 180, ((sensorsAngle[i] * 1) + (sensorsAngle2[i] * 1) + 2) * Math.PI / 180);
+            c.lineTo(sensorsX[i], sensorsY[i]);
+            c.fill();
 
-            }
-            if (document.getElementById("lever").style.transform === "scaleY(1)") {
-                c.arc(sensorsX[i], sensorsY[i], 400, ((sensorsAngle[i]) - 45) * Math.PI / 180, ((sensorsAngle[i] * 1 + 45)) * Math.PI / 180);
-                c.lineTo(sensorsX[i], sensorsY[i]);
-                c.stroke();
-            }
+        }
+        if (document.getElementById("lever").style.transform === "scaleY(1)") {
+            c.arc(sensorsX[i], sensorsY[i], 400, ((sensorsAngle[i]) - 45) * Math.PI / 180, ((sensorsAngle[i] * 1 + 45)) * Math.PI / 180);
+            c.lineTo(sensorsX[i], sensorsY[i]);
             c.stroke();
         }
+        c.stroke();
     }
 }
 
 function ver3() {
+    c.clearRect(0, 0, canvas.width, canvas.height);
     if (volt1 === 0) ver1();
     verzio = 3;
     checkVersion();
@@ -284,6 +352,11 @@ function pixelcheck(a) {
         c.fillStyle = "#000000";
         c.fillText("Valahol itt", x0[0] - 60, y0[0] - 40);
         c.stroke();
+    } else {
+        c.font = "30px Arial";
+        c.fillStyle = "#000000";
+        c.fillText("Valahol itt", x0[0] + 60, y0[0] - 40);
+        c.stroke();
     }
 }
 
@@ -364,4 +437,62 @@ function v3p() {
         document.getElementById("v3p2").style.display = "none";
         on2 = true;
     }
+}
+var mc_x = -4;
+var mc_y = 0;
+
+function mc_cart() {
+    var x = document.getElementById("allapot").offsetWidth - 23;
+    var y = document.getElementById("allapot").offsetHeight - 20;
+    var top = document.getElementById("allapot").offsetTop;
+    if (mc_x < x && mc_y === 0) {
+        mc_x++;
+    }
+    if (mc_x === x && mc_y === 0) {
+        document.getElementById("minecart").style.transform = "rotate(90deg)";
+    }
+    if (mc_x === x && mc_y < y) {
+        mc_y++;
+    }
+    if (mc_x === x && mc_y === y) {
+        document.getElementById("minecart").style.transform = "rotate(0deg)";
+    }
+    if (mc_x > -4 && mc_y === y) {
+        mc_x--;
+    }
+    if (mc_x === -4 && mc_y === y) {
+        document.getElementById("minecart").style.transform = "rotate(90deg)";
+    }
+    if (mc_x === -4 && mc_y > 0) {
+        mc_y--;
+    }
+    if (mc_x === -4 && mc_y === 0) {
+        document.getElementById("minecart").style.transform = "rotate(0deg)";
+    }
+
+    document.getElementById("minecart").style.left = mc_x + "px";
+    document.getElementById("minecart").style.top = top + mc_y + "px";
+    setTimeout(mc_cart, 10);
+}
+
+var le1 = Math.random() / 5;
+var jobb1 = Math.random() / 3;
+var forgas = Math.random();
+var boatx = 10;
+var boaty = 10;
+var r = 0;
+
+function mc_boat() {
+    var x = document.getElementById("sugo").offsetWidth - 27;
+    var top = document.getElementById("sugo").offsetTop;
+    var left = document.getElementById("sugo").offsetLeft;
+    boatx += jobb1;
+    boaty += le1;
+    r += forgas;
+    if (boaty < -3 || boaty > 35) le1 = -le1;
+    if (boatx < 0 || boatx > x) jobb1 = -jobb1;
+    document.getElementById("boat").style.transform = "rotate(" + r + "deg)";
+    document.getElementById("boat").style.left = left + boatx + "px";
+    document.getElementById("boat").style.top = top + boaty + "px";
+    setTimeout(mc_boat, 10);
 }
