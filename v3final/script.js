@@ -319,9 +319,11 @@ function setPont() {
 
 function checkVersion() {
     if (verzio !== 3) {
+        document.getElementById("slider").style.display = "none";
         document.getElementById("pontossag").style.display = "none";
         document.getElementById("pp").style.display = "none";
     } else {
+        document.getElementById("slider").style.display = "inherit";
         document.getElementById("pontossag").style.display = "inherit";
         document.getElementById("pp").style.display = "inherit";
     }

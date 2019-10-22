@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="hu">
+<!--Szedd ki majd azt hogy hol a kamera nyomeszolásra,csak mert szóltál szóljak-->
 
 <head>
     <meta charset="UTF-8" />
@@ -8,17 +9,19 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="test(); setPont(); checkVersion();" onkeydown="key();">
+<body id="bk" onload="test(); setPont(); checkVersion();" onkeydown="key();">
     <div class="center">
         <span onclick="ver1()" id="ver1">Verzió: 1</span>
         <span onclick="ver2();" id="ver2">Verzió: 2</span>
         <span onclick="ver3();" id="ver3">Verzió: 3</span><br></div>
     <textarea rows="10" cols="80" id="data">Something</textarea>
     <br>
-    <input onchange="setPont();" id="pontossag" type="range" name="points" min="1" max="10"><br>
-    <div id="pp">Pontosság: 5</div>
+    <div id="slider">
+        <input onchange="setPont();" id="pontossag" type="range" name="points" min="1" max="10"><br>
+        <div id="pp">Pontosság: 5</div>
+    </div>
     <canvas onclick="ckl();"></canvas>
-    <img onclick="lever();" id="lever" src="https://gamepedia.cursecdn.com/minecraft_gamepedia/thumb/1/10/Lever_down.png/150px-Lever_down.png?version=fa6dbcd6f4ad5f501e9a51f5a00132c6">
+    <img onclick="lever();" id="lever" src="http://www.minecraftguides.org/blocks/lever.png">
     <br>
     <div id="lm">Látómező: Kikapcsolva</div>
     <div id="allapot">Állapot:

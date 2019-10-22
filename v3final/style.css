@@ -1,7 +1,9 @@
 canvas {
-    border: 1px solid black;
+    border: 7px solid;
+    border-image: url('https://lh3.googleusercontent.com/wT_wBCuX_o2Gk8J0c4w6a9HF4RbIFeZ7muuIzfRcYGyll6yqstP9A_ptEvoSRKGPOFuBjtXot2TS-7n579aE3w') 30 round;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
     display: block;
 }
 
@@ -13,19 +15,10 @@ canvas {
     text-align: center;
 }
 
-#pp {
-    text-align: center;
-}
-
 #pontossag {
     margin-left: auto;
     margin-right: auto;
     display: block;
-}
-
-#lm {
-    font-size: 2vw;
-    text-align: center;
 }
 
 #lever {
@@ -38,28 +31,8 @@ canvas {
     top: 20px;
 }
 
-#ver1 {
-    width: 15vw;
-    font-size: 3vw;
-    border: 1px solid black;
-    background-color: aqua;
-    margin: 2vw;
-}
-
-#ver2 {
-    width: 15vw;
-    font-size: 3vw;
-    border: 1px solid black;
-    background-color: aqua;
-    margin: 2vw;
-}
-
-#ver3 {
-    width: 15vw;
-    font-size: 3vw;
-    border: 1px solid black;
-    background-color: aqua;
-    margin: 2vw;
+#bk {
+    background: url('https://i.pinimg.com/originals/f3/44/74/f344745bd37b52b4eaf0071e1160d070.jpg') repeat-y top center, url('https://media.minecraftforum.net/attachments/101/350/635644316602789784.png') no-repeat left top;
 }
 
 #allapot {
@@ -68,25 +41,30 @@ canvas {
     top: 25vh;
     height: auto;
     width: 20vw;
-    background-color: gold;
-    font-size: 4vw;
-    border: 2px solid black;
+    background-image: url('https://i.imgur.com/llrXrHX.jpg');
+    font-size: 2.5vw;
+    color: whitesmoke;
+    font-family: monospace;
+    border: 20px solid;
+    border-image: url('https://i.imgur.com/9yAH7yC.png') 100 round;
     border-radius: 1vw;
     text-align: center;
 }
 
 #vers1 {
     background-color: rgb(104, 238, 104);
-    font-size: 1.7vw;
+    font-size: 1.5vw;
+    color: black;
 }
 
 #vers2 {
     background-color: rgb(54, 179, 54);
-    font-size: 1.7vw;
+    font-size: 1.5vw;
+    color: black;
 }
 
 #vr {
-    font-size: 3vw;
+    font-size: 1.2vw;
 }
 
 #sugo {
@@ -95,17 +73,20 @@ canvas {
     top: 25vh;
     height: auto;
     width: 20vw;
-    background-color: rgb(255, 0, 200);
-    font-size: 4vw;
-    border: 2px solid black;
-    border-radius: 1vw;
+    background-image: url('https://gifimage.net/wp-content/uploads/2018/11/minecraft-water-animated-gif-3.gif');
+    font-size: 3.5vw;
+    border: 10px solid;
+    border-image: url('https://gifimage.net/wp-content/uploads/2018/11/minecraft-water-animated-gif-3.gif')1 round;
+    border-radius: 1.2vw;
     text-align: center;
+    color: whitesmoke;
+    font-family: monospace;
     padding-bottom: 1vh;
 }
 
 #irany {
     background-color: rgb(59, 160, 228);
-    font-size: 2.2vw;
+    font-size: 1.8vw;
 }
 
 #irany:hover {
@@ -114,7 +95,7 @@ canvas {
 
 #v3p {
     background-color: rgb(24, 125, 192);
-    font-size: 1.7vw;
+    font-size: 1.2vw;
 }
 
 #v3p:hover {
@@ -123,12 +104,58 @@ canvas {
 
 #ir2 {
     background-color: rgb(107, 196, 255);
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     display: none;
 }
 
 #v3p2 {
     background-color: rgb(107, 196, 255);
-    font-size: 1.8vw;
+    font-size: 1.2vw;
     display: none;
+}
+
+#lm,
+.center span {
+    width: 25%;
+    margin: 1.6vW;
+    text-align: center;
+    border: 4.3px solid;
+    border-image: url('https://i.pinimg.com/originals/f3/44/74/f344745bd37b52b4eaf0071e1160d070.jpg') 30 round;
+    background-image: url('https://i.pinimg.com/originals/a9/b9/8c/a9b98c3574eaad53955a8bc73564792e.jpg');
+    padding: 6px;
+    font-size: 1.4vW;
+    color: whitesmoke;
+    font-family: monospace;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+}
+
+#slider {
+    text-align: center;
+    background-image: url('https://i.pinimg.com/originals/91/5f/85/915f85439376e678d0996c0a3b00efdc.jpg');
+    border: 5px solid rgba(30, 30, 30, 0.6);
+    border-radius: 10px;
+    font-family: monospace;
+    color: whitesmoke;
+    padding: 6px;
+    width: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 39.3%;
+    margin-right: 60.7%;
+    display: block;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+}
+
+.center span {
+    margin-top: 20px;
+}
+
+#lm {
+    font-size: 2vw;
+    text-align: center;
+    font-family: monospace;
+    color: whitesmoke;
+    margin-left: 37.5%;
+    margin-right: 62.5%;
+    display: block;
 }
