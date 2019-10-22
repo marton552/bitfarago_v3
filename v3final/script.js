@@ -350,12 +350,12 @@ function pixelcheck(a) {
     if (y0[0] > 100) {
         c.font = "30px Arial";
         c.fillStyle = "#000000";
-        c.fillText("Valahol itt", x0[0] - 60, y0[0] - 40);
+        c.fillText("Valahol itt " + Math.floor(x0[0] * 1 / 100) + ", " + Math.floor(y0[0] * 1 / 100), x0[0] - 60, y0[0] - 40);
         c.stroke();
     } else {
         c.font = "30px Arial";
         c.fillStyle = "#000000";
-        c.fillText("Valahol itt", x0[0] + 60, y0[0] - 40);
+        c.fillText("Valahol itt " + Math.floor(x0[0] * 1 / 100) + ", " + Math.floor(y0[0] * 1 / 100), x0[0] - 60, y0[0] + 40);
         c.stroke();
     }
 }
