@@ -1,0 +1,56 @@
+#table {
+    text-align: center;
+    border: 5px darkgreen solid;
+    background-color: whitesmoke;
+    display: block;
+    margin-right: 12%;
+    margin-left: 12%;
+}
+#center{
+    text-align: center;
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+span {
+    font-size: 1.5vw;
+}
+td {
+    border: 2px black solid;
+}
+.cell {
+    border: 2px black solid;
+}
+img{
+    width: 5vw;
+}
+
+#doboz{
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    background: darkgray;
+    border: darkslategray 5px solid;
+    border-radius: 30px;
+    color:whitesmoke;
+    font-family: monospace;
+}
+#start{
+    border-radius: 20px;
+    display: block;
+    margin-left: 48%;
+    margin-right: 52%;
+    width:10%;
+    border: 2px solid darkgray;
+    background: darkred;
+}
+#doboz table{
+    display: block;
+    margin-left: 13.5%;
+    margin-right: 17.5%;
+}
+body{
+    height: 100vh;
+    background: rgb(72,172,23);
+background: linear-gradient(45deg, rgba(72,172,23,1) 10%, rgba(72,172,23,1) 14%, rgba(46,110,15,1) 14%, rgba(46,110,15,1) 16%, rgba(70,168,23,1) 16%, rgba(72,172,23,1) 18%, rgba(46,110,15,1) 18%, rgba(46,110,15,1) 44%, rgba(72,172,23,1) 44%, rgba(72,172,23,1) 55%, rgba(27,63,9,1) 55%, rgba(27,63,9,1) 57%, rgba(72,172,23,1) 57%, rgba(72,172,23,1) 63%, rgba(27,63,9,1) 64%, rgba(72,172,23,1) 64%, rgba(72,172,23,1) 67%, rgba(72,172,23,1) 67%, rgba(138,202,107,1) 69%, rgba(72,172,23,1) 75%, rgba(138,202,107,1) 76%, rgba(72,172,23,1) 76%, rgba(72,172,23,1) 100%);
+}

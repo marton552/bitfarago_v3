@@ -1,0 +1,14 @@
+span{
+    position: absolute;
+    border-radius: 100px;
+    border:1px solid black;
+    background: yellow;
+    font-size: 5vw;
+    display: inherit;
+}
+#gomb{
+    text-align: center;
+    border-radius: 50%;
+    width:10%;
+    background: red;
+}

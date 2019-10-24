@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>1.Feladat</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body onload="tablegenerate();"><div id="center">
+    <table id="table"></table>
+    <div id="doboz">
+        <div id="start" onclick="start();">START</div>
+        <div>Az indítás előtt helyezzen fel nyilakat a táblázatra, utólag nem tudja módosítani! (kattintson az elemre, majd kattintson oda ahova rakni szeretné)</div>        
+    <table>
+            <tr>
+                <td><img onclick="selected = 1" id="nyilfel" src="nyilfel.png"></td>
+                <td><img onclick="selected = 2" id="nyille" src="nyille.png"></td>
+                <td><img onclick="selected = 3" id="nyilbal" src="nyilbal.png"></td>
+                <td><img onclick="selected = 4" id="nyiljobb" src="nyiljobb.png"></td>
+                <td><img onclick="selected = 5" id="placerobot" src="robot.png"></td>
+            </tr>
+    </table>
+    </div>
+</div>
+</body>
+</html>

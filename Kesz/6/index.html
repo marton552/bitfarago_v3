@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>6. Feladat</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <style> body {text-align: center;} </style>
+</head>
+<body onload="load();">
+    <div style="margin: 0 auto; text-align: center; width: 100%;">
+        <div style="display: inline-block: width: 40%; margin: 0 auto; float: left;">
+            <img src="ablak_nyitva.png" id="ablak" />
+            <p id="ablaks">Ablak: </p>
+
+            <img src="radiator.png" id="rad" />
+            <p id="heaters"></p>
+            
+            <img src="homero.png" />
+            <p id="temp"></p>
+        </div>
+
+        <div style="display: inline-block: width: 40%; margin: 0 auto; float: left;">
+
+            <h3>Kazán hőmérséklet módosítása</h3>
+            <input type="text" id="beheater" />
+            <br>
+            <button onclick="changeHeaterTemp();">Kazán hőmérséklet megváltoztatása</button>
+
+            <h3>Ablak nyitás/zárás</h3>
+            <br>
+            <button onclick="setWindowState('open');">Ablak nyitása</button>
+            <button onclick="setWindowState('close');">Ablak zárása</button>
+
+            <h3>Gyorsítás</h3>
+            <input type="text" id="fastforward" />
+            <br>
+            <button onclick="ff();">Gyorsít</button>
+
+        </div>
+    </div>
+
+</body>
+</html>
